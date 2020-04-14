@@ -71,6 +71,51 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 4542547,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "sustainability",
+      "organizer": "Adam Jahr",
+      "title": "LearnAlong",
+      "description": "Learning is Awesome!",
+      "location": "Here and Now!",
+      "date": "2020-04-14T23:08:00.000Z",
+      "time": "10:00",
+      "attendees": []
+    },
+    {
+      "id": 2366020,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "nature",
+      "organizer": "Adam Jahr",
+      "title": "Plant a tree!",
+      "description": "Let's plant trees together!",
+      "location": "The Forest",
+      "date": "2020-04-30T23:25:00.000Z",
+      "time": "8:00",
+      "attendees": []
+    },
+    {
+      "id": 1710594,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "food",
+      "organizer": "Adam Jahr",
+      "title": "Family Cookout!",
+      "description": "Let's cook together",
+      "location": "My House",
+      "date": "2020-04-24T23:37:00.000Z",
+      "time": "18:00",
+      "attendees": []
     }
   ]
 }
