@@ -17,7 +17,8 @@ export default new Vuex.Store({
       'community'
     ],
     events: [],
-    totalEvents: 0
+    totalEvents: 0,
+    event: {}
   },
   mutations: {
     ADD_EVENT(state, event) {
@@ -28,6 +29,9 @@ export default new Vuex.Store({
     },
     COUNT_EVENTS(state, eventCount) {
       state.totalEvents = eventCount
+    },
+    SET_EVENT(state, event) {
+      state.event = event
     }
   },
   actions: {
@@ -39,13 +43,26 @@ export default new Vuex.Store({
     fetchEvents({ commit }, { perPage, page }) {
       EventService.getEvents(perPage, page)
         .then(response => {
-          console.log('Total events are ' + response.headers['x-total-count'])
           commit('COUNT_EVENTS', response.headers['x-total-count'])
           commit('SET_EVENTS', response.data)
         })
         .catch(error => {
           console.log('There was an error:', error.response)
         })
+    },
+    fetchEvent({ commit, getters }, id) {
+      let event = getters.getEventById(id)
+      if (event) {
+        commit('SET_EVENT', event)
+      } else {
+        EventService.getEvent(id)
+          .then(response => {
+            commit('SET_EVENT', response.data)
+          })
+          .catch(error => {
+            console.log('There was an error:', error.response)
+          })
+      }
     }
   },
   getters: {

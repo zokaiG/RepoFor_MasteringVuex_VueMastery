@@ -27,8 +27,6 @@ export default {
   },
   computed: {
     isMaxPage() {
-      console.log('Total', this.totalEvents)
-      console.log('TRUTHS?', this.totalEvents / 3 < this.page ? true : false)
       return this.totalEvents / 3 > this.page ? true : false
     },
     page() {
